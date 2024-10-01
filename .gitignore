@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#python virtual environment
+src/utils/image_processing/env*
+src/utils/image_processing/__pycache__/
+
+#pyright configuration
+pyrightconfig.json
