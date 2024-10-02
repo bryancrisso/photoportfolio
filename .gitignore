@@ -36,8 +36,11 @@ yarn-error.log*
 next-env.d.ts
 
 #python virtual environment
-src/utils/image_processing/env*
-src/utils/image_processing/__pycache__/
+*__pycache__*
+env
 
 #pyright configuration
 pyrightconfig.json
+
+#database and storage configuration
+src/config/config.ini
