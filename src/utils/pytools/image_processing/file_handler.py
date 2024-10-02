@@ -13,3 +13,8 @@ def create_hierarchy(dir: str) -> List[List[str]]:
 
 def select_jpegs(files: List[List[str]]) -> List[List[str]]:
     return [file for file in files if file[-1].lower().endswith(".jpg")]
+
+
+def read_json_string(filepath: str):
+    with open(filepath, "r") as file:
+        return file.read()
