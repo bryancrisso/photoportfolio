@@ -7,14 +7,28 @@ export default async function ImagePage({ params }: { params: { id: string } }) 
   const data = await query<ImageResult>("SELECT * FROM images WHERE image_id = $1", [params.id]);
   const image = data.rows[0];
   return (
-    <div className="flex justify-center items-center h-[90vh]">
-      <div className="grid grid-cols-3 gap-4">
-        <div className="flex h-[90vh] w-[100vh] relative justify-end col-span-2">
+    <div className="flex w-full min-h-screen pr-4 pl-4 pb-4">
+      <div className="w-3/4 pr-4">
+        <div className="rounded-lg  shadow-lg h-[90vh]">
           <Image filepath={"/" + image.filepath}></Image>
         </div>
-        <div className="flex flex-col items-left justify-center p-8">
-          <h1 className="text-2xl font-bold mb-4">Hi</h1>
-          <p>Taken in France</p>
+      </div>
+      <div className="w-1/4 bg-yellow-50 p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Image Title</h2>
+        <p className="text-gray-600 mb-4">
+          This is a description of the image. You can include details about what the image represents,
+          when it was taken, or any other relevant information.
+        </p>
+        <div className="space-y-2">
+          <p className="text-sm">
+            <span className="font-semibold">Date:</span> October 8, 2024
+          </p>
+          <p className="text-sm">
+            <span className="font-semibold">Location:</span> Sample Location
+          </p>
+          <p className="text-sm">
+            <span className="font-semibold">Photographer:</span> John Doe
+          </p>
         </div>
       </div>
     </div>
